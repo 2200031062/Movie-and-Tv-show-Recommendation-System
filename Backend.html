@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendation System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #recommendation {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Movie Recommendation System</h1>
+
+    <label for="genre">Select your favorite genre:</label>
+    <select id="genre">
+        <option value="action">Action</option>
+        <option value="comedy">Comedy</option>
+        <option value="drama">Drama</option>
+        <!-- Add more genres as needed -->
+    </select>
+
+    <button onclick="getRecommendation()">Get Recommendation</button>
+
+    <div id="recommendation"></div>
+
+    <script>
+        function getRecommendation() {
+            // You would typically make an API call to the backend here
+            // and receive the recommendation based on the selected genre.
+
+            // For this example, let's assume the recommendations are hard-coded.
+            const genre = document.getElementById('genre').value;
+            let recommendation;
+
+            switch (genre) {
+                case 'action':
+                    recommendation = 'Terminator 2: Judgment Day';
+                    break;
+                case 'comedy':
+                    recommendation = 'Dumb and Dumber';
+                    break;
+                case 'drama':
+                    recommendation = 'The Shawshank Redemption';
+                    break;
+                default:
+                    recommendation = 'No recommendation available';
+            }
+
+            // Display the recommendation
+            const recommendationElement = document.getElementById('recommendation');
+            recommendationElement.innerHTML = `<p>Recommended Movie: ${recommendation}</p>`;
+        }
+    </script>
+</body>
+</html>
